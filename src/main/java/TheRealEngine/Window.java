@@ -4,9 +4,6 @@ import org.lwjgl.Version;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.opengl.GL;
 import util.Time;
-import util.UtilTools;
-
-import java.security.Key;
 
 import static org.lwjgl.glfw.Callbacks.glfwFreeCallbacks;
 import static org.lwjgl.glfw.GLFW.*;
@@ -33,7 +30,7 @@ public class Window {
         r = 0;
         b = 0;
         g = 0;
-        a = 0;
+        a = 1;
     }
 
     public static void changeScene(int newScene){
@@ -139,7 +136,6 @@ public class Window {
 
             if (dt >= 0){
                 currentScene.update(dt);
-                UtilTools.getFps(dt);
             }
 
             glfwSwapBuffers(glfwWindow);
