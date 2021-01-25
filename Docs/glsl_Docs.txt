@@ -1,0 +1,40 @@
+a = attribute, f = fragment, u = uniform
+uniform sticks around from object to object
+
+'in' in the vertex ???
+'out' in the vertex passes anything to fragment
+'in' in the fragment receives anything from vertex
+
+eg1: makes anything black and white
+{
+    #type fragment
+    #version 330 core
+
+    uniform float uTime;
+
+    in vec4 fColor; // gets the out fColor from above
+
+    out vec4 color;
+
+    void main()
+    {
+        float avg = (fColor.r + fColor.g + fColor.b) / 3;
+        color = vec4(avg, avg, avg, 1);
+    }
+}
+
+eg2: simple noise function
+{
+    #type fragment
+    #version 330 core
+
+    in vec4 fColor; // gets the out fColor from above
+
+    out vec4 color;
+
+    void main()
+    {
+        float noise = fract(sin(dot(fColor.xy, vec2(12.9898, 78.233))) * 43758.5453); // generates a number between 0 and 1
+        color = fColor * noise;
+    }
+}
