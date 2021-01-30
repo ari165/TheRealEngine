@@ -15,15 +15,14 @@ public class Window {
     private long glfwWindow;
 
     public float r, g, b, a;
-    private boolean fadeToBlack = false;
 
     private static Window window = null;
 
     private static Scene currentScene;
 
     private Window(){
-        this.width = 1280;
-        this.height = 720;
+        this.width = 1920;
+        this.height = 1080;
         this.title = "the real engine";
 
         r = 0;
@@ -106,7 +105,7 @@ public class Window {
         // Make the OpenGL context current
         glfwMakeContextCurrent(glfwWindow);
         // Enable v-sync (means dont wait between frames)
-        glfwSwapInterval(0);
+        glfwSwapInterval(1);
 
         // Make the window visible
         glfwShowWindow(glfwWindow);
