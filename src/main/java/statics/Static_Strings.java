@@ -10,5 +10,8 @@ public class Static_Strings {
     public static String testTexture1Path = texturePath + "apartment.png";
     public static String testTexture2Path = texturePath + "TestSprite.png";
     public static String spritesheetPath = texturePath + "spritesheet.png";
+    public static String blendImage1Path = texturePath + "blendImage1.png";
+    public static String blendImage2Path = texturePath + "blendImage2.png";
+
 
 }

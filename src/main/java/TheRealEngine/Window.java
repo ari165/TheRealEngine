@@ -25,9 +25,9 @@ public class Window {
         this.height = 1080;
         this.title = "the real engine";
 
-        r = 0;
-        b = 0;
-        g = 0;
+        r = 0.4f;
+        b = 0.6f;
+        g = 0.2f;
         a = 1;
     }
 
@@ -116,6 +116,9 @@ public class Window {
         // creates the GLCapabilities instance and makes the OpenGL
         // bindings available for use.
         GL.createCapabilities();
+
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
 
         Window.changeScene(0);
     }

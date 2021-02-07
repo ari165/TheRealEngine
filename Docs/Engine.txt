@@ -19,3 +19,17 @@ spawn 10000 cubes
         }
     }
 }
+
+simple animation system
+{
+    spriteFlipTimeLeft -= dt;
+    if (spriteFlipTimeLeft <= 0){
+       spriteFlipTimeLeft = spriteFlipTime;
+        spriteIndex++;
+        if (spriteIndex > 4){
+            spriteIndex = 0;
+        }
+        // obj1 is initialized in init()
+        obj1.getComponent(SpriteRenderer.class).SetSprite(sprites.getSprite(spriteIndex));
+    }
+}
