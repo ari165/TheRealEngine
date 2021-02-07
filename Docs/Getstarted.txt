@@ -1,0 +1,24 @@
+for now, the only class that you should worry about, is the LevelEditorScene.java .
+the structure and functions are similar to unity.
+there is the init() method that gets called when the scene is created
+the update method is called every frame
+create gameObjects like the example below
+
+obj1 = new GameObject("Object 1", new Transform(new Vector2f(200, 100), new Vector2f(256, 256)), 1);
+
+it has a name, a transform, and a zIndex
+
+the only component that is available right now is a SpriteRenderer
+you can add a SpriteRenderer like below
+
+obj1.addComponent(new SpriteRenderer(new Sprite(AssetPool.getTexture("PATH_TO_YOUR_TEXTURE"))));
+
+NOTE:
+after creating a gameObject you NEED to add it to the scene
+this.addGameObjectToScene(obj1);
+
+you can use spritesheets too
+
+there is full support for mouse and keyboard too
+
+you can create you own components by extending your class from Component.java class (its something like unity scripts)
