@@ -24,23 +24,23 @@ public class LevelEditorScene extends Scene{
         // create a game object, add a sprite renderer then add it to the scene
         obj1 = new GameObject("Object 1",
                 new Transform(new Vector2f(200, 100), new Vector2f(256, 256)), 1);
-        obj1.addComponent(new SpriteRenderer(new Sprite(AssetPool.getTexture(Static_Strings.blendImage1Path))));
+        obj1.addComponent(new SpriteRenderer(new Sprite(AssetPool.getTexture(Static_Strings.blendImage1))));
         this.addGameObjectToScene(obj1);
 
 
         GameObject obj2 = new GameObject("Object 2",
                 new Transform(new Vector2f(400, 100), new Vector2f(256, 256)), 2);
 
-        obj2.addComponent(new SpriteRenderer(new Sprite(AssetPool.getTexture(Static_Strings.blendImage2Path))));
+        obj2.addComponent(new SpriteRenderer(new Sprite(AssetPool.getTexture(Static_Strings.blendImage2))));
         this.addGameObjectToScene(obj2);
     }
 
     private void loadResources(){
         // loading the default shader
-        AssetPool.getShader(Static_Strings.defaultShaderPath);
+        AssetPool.getShader(Static_Strings.defaultShader);
 
         // example of loading a spritesheet
-        AssetPool.addSpritesheet(Static_Strings.spritesheetPath, new Spritesheet(AssetPool.getTexture(Static_Strings.spritesheetPath),
+        AssetPool.addSpritesheet(Static_Strings.spritesheet, new Spritesheet(AssetPool.getTexture(Static_Strings.spritesheet),
                 16, 16, 26, 0));
     }
 
