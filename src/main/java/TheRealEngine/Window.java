@@ -4,6 +4,7 @@ import org.lwjgl.Version;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.openal.EXTOffset;
 import org.lwjgl.opengl.GL;
+import util.UtilTools;
 
 import static org.lwjgl.glfw.Callbacks.glfwFreeCallbacks;
 import static org.lwjgl.glfw.GLFW.*;
@@ -76,6 +77,9 @@ public class Window {
         // Terminate GLFW and free the error callback
         glfwTerminate();
         glfwSetErrorCallback(null).free();
+
+        UtilTools.PrintAvgFps();
+        currentScene.onExit();
     }
     public void init() {
         // Setup an error callback
@@ -111,7 +115,7 @@ public class Window {
         // Make the OpenGL context current
         glfwMakeContextCurrent(glfwWindow);
         // Enable v-sync (means dont wait between frames)
-        glfwSwapInterval(1);
+        glfwSwapInterval(0);
 
         // Make the window visible
         glfwShowWindow(glfwWindow);
@@ -152,6 +156,8 @@ public class Window {
 
             this.imGuiLayer.update(dt);
             glfwSwapBuffers(glfwWindow);
+
+            UtilTools.getFps(dt);
 
             endTime = (float)glfwGetTime();
             dt = endTime - beginTime;

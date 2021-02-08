@@ -33,3 +33,10 @@ simple animation system
         obj1.getComponent(SpriteRenderer.class).SetSprite(sprites.getSprite(spriteIndex));
     }
 }
+
+check if there is a component
+{
+    if (gameObject.getComponent(SpriteRenderer.class) != null){
+        System.out.println("there is a sprite renderer");
+    }
+}

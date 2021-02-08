@@ -39,4 +39,6 @@ public abstract class Scene {
     public Camera camera() {
         return this.camera;
     }
+
+    public void onExit(){ }
 }

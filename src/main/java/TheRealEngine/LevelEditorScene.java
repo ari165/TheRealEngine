@@ -54,4 +54,9 @@ public class LevelEditorScene extends Scene{
         }
         this.renderer.render();
     }
+
+    @Override
+    public void onExit(){
+        System.out.println("exited, bye");
+    }
 }
