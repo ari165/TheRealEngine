@@ -13,7 +13,7 @@ public class SpriteRenderer extends Component {
     private Sprite sprite = new Sprite();
 
     private transient Transform lastTransform;
-    private transient boolean isDirty = false;
+    private transient boolean isDirty = true;
 
 
 
@@ -32,6 +32,7 @@ public class SpriteRenderer extends Component {
 
     @Override
     public void imgui() {
+
         float[] imColor = {color.x, color.y, color.z, color.w};
         if (ImGui.colorPicker4("Color picker: ", imColor)){
             this.color.set(imColor[0], imColor[1], imColor[2], imColor[3]);

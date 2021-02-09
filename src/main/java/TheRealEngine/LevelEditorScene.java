@@ -2,6 +2,7 @@ package TheRealEngine;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import components.Rigidbody;
 import components.Sprite;
 import components.SpriteRenderer;
 import components.Spritesheet;
@@ -26,6 +27,7 @@ public class LevelEditorScene extends Scene{
 
         this.camera = new Camera(new Vector2f(-250, 0));
         if (levelLoaded){
+            this.activeGameObject = gameObjects.get(0);
             return;
         }
 
@@ -35,6 +37,7 @@ public class LevelEditorScene extends Scene{
         obj1Sprite = new SpriteRenderer();
         obj1Sprite.setColor(new Vector4f(1, 0, 0, 1));
         obj1.addComponent(obj1Sprite);
+        obj1.addComponent(new Rigidbody());
         this.addGameObjectToScene(obj1);
         this.activeGameObject = obj1;
 
@@ -45,6 +48,7 @@ public class LevelEditorScene extends Scene{
         obj2SpriteRenderer.setSprite(obj2Sprite);
         obj2.addComponent(obj2SpriteRenderer);
         this.addGameObjectToScene(obj2);
+
     }
 
     private void loadResources(){
@@ -54,6 +58,7 @@ public class LevelEditorScene extends Scene{
         // example of loading a spritesheet
         AssetPool.addSpritesheet(Static_Strings.spritesheet, new Spritesheet(AssetPool.getTexture(Static_Strings.spritesheet),
                 16, 16, 26, 0));
+        AssetPool.getTexture(Static_Strings.blendImage2);
     }
 
     @Override
@@ -70,7 +75,7 @@ public class LevelEditorScene extends Scene{
     @Override
     public void imgui() {
         ImGui.begin("tester");
-        ImGui.text("wow im testing im gui");
+        ImGui.text("wow im testing imgui");
         ImGui.end();
     }
 
