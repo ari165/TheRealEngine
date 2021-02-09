@@ -3,6 +3,7 @@ package statics;
 public class Static_Strings {
     public static String shaderPath = "assets/shaders/";
     public static String texturePath = "assets/images/";
+    public static String fontPath = "assets/fonts/";
 
     public static String defaultShader = shaderPath + "default.glsl";
     public static String noiseShader = shaderPath + "Noise.glsl";
@@ -13,5 +14,6 @@ public class Static_Strings {
     public static String blendImage1 = texturePath + "blendImage1.png";
     public static String blendImage2 = texturePath + "blendImage2.png";
 
+    public static String segoeUiFont = fontPath + "Segoeui.ttf";
 
 }

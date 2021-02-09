@@ -3,7 +3,9 @@ package TheRealEngine;
 import components.Sprite;
 import components.SpriteRenderer;
 import components.Spritesheet;
+import imgui.ImGui;
 import org.joml.Vector2f;
+import org.joml.Vector4f;
 import statics.Static_Strings;
 import util.AssetPool;
 
@@ -24,9 +26,9 @@ public class LevelEditorScene extends Scene{
         // create a game object, add a sprite renderer then add it to the scene
         obj1 = new GameObject("Object 1",
                 new Transform(new Vector2f(200, 100), new Vector2f(256, 256)), 1);
-        obj1.addComponent(new SpriteRenderer(new Sprite(AssetPool.getTexture(Static_Strings.blendImage1))));
+        obj1.addComponent(new SpriteRenderer(new Vector4f(0, 1, 0, 1)));
         this.addGameObjectToScene(obj1);
-
+        this.activeGameObject = obj1;
 
         GameObject obj2 = new GameObject("Object 2",
                 new Transform(new Vector2f(400, 100), new Vector2f(256, 256)), 2);
@@ -53,6 +55,13 @@ public class LevelEditorScene extends Scene{
             go.update(dt);
         }
         this.renderer.render();
+    }
+
+    @Override
+    public void imgui() {
+        ImGui.begin("tester");
+        ImGui.text("wow im testing im gui");
+        ImGui.end();
     }
 
     @Override

@@ -28,9 +28,9 @@ public class Window {
         this.height = 1080;
         this.title = "the real engine";
 
-        r = 0.4f;
-        b = 0.6f;
-        g = 0.2f;
+        r = 1f;
+        b = 1f;
+        g = 1f;
         a = 1;
     }
 
@@ -114,8 +114,8 @@ public class Window {
 
         // Make the OpenGL context current
         glfwMakeContextCurrent(glfwWindow);
-        // Enable v-sync (means dont wait between frames)
-        glfwSwapInterval(0);
+        // Enable v-sync
+        glfwSwapInterval(GLFW_TRUE);
 
         // Make the window visible
         glfwShowWindow(glfwWindow);
@@ -154,7 +154,7 @@ public class Window {
                 currentScene.update(dt);
             }
 
-            this.imGuiLayer.update(dt);
+            this.imGuiLayer.update(dt, currentScene);
             glfwSwapBuffers(glfwWindow);
 
             UtilTools.getFps(dt);

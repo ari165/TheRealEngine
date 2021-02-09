@@ -3,9 +3,12 @@
     <words>
       <w>glfw</w>
       <w>glsl</w>
+      <w>imgui</w>
       <w>interoperation</w>
       <w>lwjgl</w>
       <w>rebuffer</w>
+      <w>segoe</w>
+      <w>segoeui</w>
       <w>spritesheet</w>
       <w>spritesheets</w>
     </words>
