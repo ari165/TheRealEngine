@@ -1,6 +1,5 @@
 package components;
 
-import TheRealEngine.Component;
 import TheRealEngine.Transform;
 import imgui.ImGui;
 import org.joml.Vector2f;

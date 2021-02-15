@@ -2,8 +2,10 @@ package TheRealEngine;
 
 import org.lwjgl.Version;
 import org.lwjgl.glfw.GLFWErrorCallback;
-import org.lwjgl.openal.EXTOffset;
 import org.lwjgl.opengl.GL;
+import scenes.LevelEditorScene;
+import scenes.LevelScene;
+import scenes.Scene;
 import util.UtilTools;
 
 import static org.lwjgl.glfw.Callbacks.glfwFreeCallbacks;
@@ -24,8 +26,8 @@ public class Window {
     private static Scene currentScene;
 
     private Window(){
-        this.width = 1920;
-        this.height = 1080;
+        this.width = 2560;
+        this.height = 1440;
         this.title = "the real engine";
 
         r = 1f;
@@ -118,7 +120,7 @@ public class Window {
         // Make the OpenGL context current
         glfwMakeContextCurrent(glfwWindow);
         // Enable v-sync
-        glfwSwapInterval(GLFW_TRUE);
+        glfwSwapInterval(GLFW_FALSE);
 
         // Make the window visible
         glfwShowWindow(glfwWindow);

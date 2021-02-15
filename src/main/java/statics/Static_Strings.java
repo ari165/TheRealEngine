@@ -13,6 +13,7 @@ public class Static_Strings {
     public static String spritesheet = texturePath + "spritesheet.png";
     public static String blendImage1 = texturePath + "blendImage1.png";
     public static String blendImage2 = texturePath + "blendImage2.png";
+    public static String decorationsSheet = texturePath + "decorationsAndBlocks.png";
 
     public static String segoeUiFont = fontPath + "Segoeui.ttf";
 

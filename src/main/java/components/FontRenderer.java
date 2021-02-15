@@ -1,7 +1,5 @@
 package components;
 
-import TheRealEngine.Component;
-
 public class FontRenderer extends Component {
 
     @Override

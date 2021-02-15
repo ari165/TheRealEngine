@@ -1,7 +1,12 @@
-package TheRealEngine;
+package scenes;
 
+import TheRealEngine.Camera;
+import TheRealEngine.GameObject;
+import TheRealEngine.GameObjectDeserializer;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import components.Component;
+import components.ComponentDeserializer;
 import imgui.ImGui;
 import renderer.Renderer;
 
