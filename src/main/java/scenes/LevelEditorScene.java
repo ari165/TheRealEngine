@@ -8,7 +8,9 @@ import components.*;
 import imgui.ImGui;
 import imgui.ImVec2;
 import org.joml.Vector2f;
+import org.joml.Vector3f;
 import org.joml.Vector4f;
+import renderer.DebugDraw;
 import statics.Static_Strings;
 import util.AssetPool;
 
@@ -65,10 +67,19 @@ public class LevelEditorScene extends Scene {
         AssetPool.getTexture(Static_Strings.blendImage2);
     }
 
+    float t = 0.0f;
     @Override
     public void update(float dt) {
         mouseControls.update(dt);
 
+        float x = ((float)Math.sin(t) * 200.0f) + 600;
+        float y = ((float)Math.cos(t) * 200.0f) + 400;
+        float x_ = ((float)Math.sin(t) * 200.0f) + 300;
+        float y_ = ((float)Math.cos(t) * 200.0f) + 400;
+
+        t += 0.05f;
+        DebugDraw.addLine2D(new Vector2f(600, 400), new Vector2f(x, y), new Vector3f(0, 0, 1), 10);
+        DebugDraw.addLine2D(new Vector2f(300, 400), new Vector2f(x_, y_), new Vector3f(0, 0, 1), 1);
         // if you remove the codes bellow, the renderer and the components will stop working
         for (GameObject go : this.gameObjects){
             go.update(dt);

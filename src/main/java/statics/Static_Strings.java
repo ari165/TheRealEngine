@@ -6,6 +6,7 @@ public class Static_Strings {
     public static String fontPath = "assets/fonts/";
 
     public static String defaultShader = shaderPath + "default.glsl";
+    public static String debugLine2D = shaderPath + "debugLine2D.glsl";
     public static String noiseShader = shaderPath + "Noise.glsl";
 
     public static String testTexture1 = texturePath + "apartment.png";

@@ -3,6 +3,7 @@ package TheRealEngine;
 import org.lwjgl.Version;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.opengl.GL;
+import renderer.DebugDraw;
 import scenes.LevelEditorScene;
 import scenes.LevelScene;
 import scenes.Scene;
@@ -26,8 +27,8 @@ public class Window {
     private static Scene currentScene;
 
     private Window(){
-        this.width = 2560;
-        this.height = 1440;
+        this.width = 1920;
+        this.height = 1080;
         this.title = "the real engine";
 
         r = 1f;
@@ -120,7 +121,7 @@ public class Window {
         // Make the OpenGL context current
         glfwMakeContextCurrent(glfwWindow);
         // Enable v-sync
-        glfwSwapInterval(GLFW_FALSE);
+        glfwSwapInterval(GLFW_TRUE);
 
         // Make the window visible
         glfwShowWindow(glfwWindow);
@@ -152,10 +153,13 @@ public class Window {
             // Poll events
             glfwPollEvents();
 
+            DebugDraw.beginFrame();
+
             glClearColor(r, g, b, a);
             glClear(GL_COLOR_BUFFER_BIT);
 
             if (dt >= 0){
+                DebugDraw.draw();
                 currentScene.update(dt);
             }
 
