@@ -22,3 +22,24 @@ you can use spritesheets too
 there is full support for mouse and keyboard too
 
 you can create you own components by extending your class from Component.java class (its something like unity scripts)
+
+you can draw debug lines using DebugDraw class
+anything in the scene will be saved and serialized
+you can drag and drop from the tester menu
+
+if you dont want v-sync you can find the setting in Window class
+
+please do not remove any of the update function code
+just add your own between levelEditorStuff.update(dt) and the for loop
+
+also add your init before loading the scene
+
+there is an onExit function at the end
+also DO NOT MESS WITH imgui() function
+its very buggy
+
+the physics2D doesnt work yet it doesnt have anything dont get too excited
+
+adding a try catch to the Main class is dumb
+dont do it
+you can monitor your avgFps and fps using utilTools
