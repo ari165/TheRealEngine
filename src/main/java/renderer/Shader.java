@@ -81,7 +81,7 @@ public class Shader {
             assert false : "";
         }
 
-        // load and compile vertex shader
+        // load and compile fragment shader
         fragmentID = glCreateShader(GL_FRAGMENT_SHADER);
         // pass the shader source code to GPU
         glShaderSource(fragmentID, fragmentSource);
