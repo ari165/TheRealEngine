@@ -70,7 +70,6 @@ public class Matha {
         return compare(vec1.x, vec2.x, epsilon) && compare(vec1.y, vec2.y, epsilon);
     }
 
-
     /**
      * compares two floats with the precision of Float.MIN_VALUE
      *
