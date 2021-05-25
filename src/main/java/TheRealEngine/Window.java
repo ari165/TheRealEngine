@@ -105,7 +105,7 @@ public class Window {
         // Create the window
         glfwWindow = glfwCreateWindow(this.width, this.height, this.title, NULL, NULL);
         if (glfwWindow == NULL){
-            throw new IllegalStateException("Failed to create GLFW window (not cool). ");
+            throw new IllegalStateException("Failed to create GLFW window (not cool).");
         }
 
         //set the callbacks

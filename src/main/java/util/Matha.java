@@ -5,7 +5,8 @@ import org.joml.Vector2f;
 public class Matha {
 
     /**
-     * Rotates a point by the angle given to
+     * Rotates a point by the angle given to.
+     *
      * Note: it modifies the vector
      *
      * @param vec the point's position

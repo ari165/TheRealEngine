@@ -1,13 +1,12 @@
 package scenes;
 
-import TheRealEngine.Camera;
-import TheRealEngine.GameObject;
-import TheRealEngine.Prefabs;
-import TheRealEngine.Transform;
+import TheRealEngine.*;
 import components.*;
 import imgui.ImGui;
 import imgui.ImVec2;
 import org.joml.Vector2f;
+import org.joml.Vector3f;
+import renderer.DebugDraw;
 import statics.Static_Strings;
 import util.AssetPool;
 
@@ -47,11 +46,13 @@ public class LevelEditorScene extends Scene {
         AssetPool.getTexture(Static_Strings.blendImage2);
     }
 
+    float x = 0;
+    float y = 20f;
     @Override
     public void update(float dt) {
         levelEditorStuff.update(dt);
 
-        // if you remove the codes bellow, the renderer and the components will stop working
+
         for (GameObject go : this.gameObjects){
             go.update(dt);
         }
